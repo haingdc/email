@@ -10,7 +10,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SplitPane split="vertical" defaultSize="50%" />
+        <SplitPane split="vertical" defaultSize="50%">
+          <div className="sidebar-pane" />
+          <div className="list-mail-pane" />
+          <div className="content-pane" />
+        </SplitPane>
       </div>
     );
   }

@@ -14,3 +14,11 @@ it("should render a split pane", () => {
   const wrapper = shallow(<App />);
   expect(wrapper.find(SplitPane).length).toEqual(1);
 });
+
+it("splitpane should render 3 panes", () => {
+  const wrapper = shallow(<App />);
+  const splitpane = wrapper.find(SplitPane);
+  expect(splitpane.children(".sidebar-pane").length).toEqual(1);
+  expect(splitpane.children(".list-mail-pane").length).toEqual(1);
+  expect(splitpane.children(".content-pane").length).toEqual(1);
+});
