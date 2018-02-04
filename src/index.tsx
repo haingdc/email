@@ -8,6 +8,7 @@ import { createStore } from "redux";
 import { StoreState } from "./types/index";
 import { enthusiasm } from "./reducers";
 import { Provider } from "react-redux";
+import App from "./App";
 
 const store = createStore<StoreState>(enthusiasm, {
   enthusiasmLevel: 1,
@@ -15,9 +16,10 @@ const store = createStore<StoreState>(enthusiasm, {
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Hello />
-  </Provider>,
+  // <Provider store={store}>
+  //   <Hello />
+  // </Provider>,
+  <App />,
   document.getElementById("root") as HTMLElement,
 );
 registerServiceWorker();
