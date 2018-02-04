@@ -25,6 +25,9 @@ function createWindow() {
       });
   mainWindow.loadURL(startUrl);
 
+  // Open the DevTools.
+  // mainWindow.webContents.openDevTools();
+
   // MacOs only
   // app.setAboutPanelOptions({
   //   applicationName: "Mook",
