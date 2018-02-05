@@ -4,6 +4,7 @@ import * as Adapter from "enzyme-adapter-react-16";
 
 import Sidebar from "../../../components/Sidebar";
 import New from "../../../components/New";
+import Accounts from "../../../components/Accounts";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -17,4 +18,9 @@ it("Sidebar should display app name which is Mail", () => {
 it("Sidebar should display New button", () => {
   const wrapper = shallow(<Sidebar />);
   expect(wrapper.find(New).length).toEqual(1);
+});
+
+it("Sidebar should display Accounts button", () => {
+  const wrapper = shallow(<Sidebar />);
+  expect(wrapper.find(Accounts).length).toEqual(1);
 });
