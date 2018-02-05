@@ -4,7 +4,8 @@ import * as Adapter from "enzyme-adapter-react-16";
 // @ts-ignore
 import * as SplitPane from "react-split-pane";
 
-import App, { Sidebar } from "../../App";
+import App from "../../App";
+import Sidebar from "../../components/Sidebar";
 
 const { shallow } = Enzyme;
 
