@@ -4,6 +4,7 @@ import "./App.css";
 // @ts-ignore
 import * as SplitPane from "react-split-pane";
 import Sidebar from "./components/Sidebar";
+import List from "./components/List";
 
 const logo = require("./logo.svg");
 
@@ -16,7 +17,9 @@ class App extends React.Component {
             <div className="sidebar-pane">
               <Sidebar />
             </div>
-            <div className="list-mail-pane" />
+            <div className="list-mail-pane">
+              <List />
+            </div>
           </SplitPane>
           <div className="content-pane" />
         </SplitPane>

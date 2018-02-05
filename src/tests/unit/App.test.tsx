@@ -6,6 +6,7 @@ import * as SplitPane from "react-split-pane";
 
 import App from "../../App";
 import Sidebar from "../../components/Sidebar";
+import List from "../../components/List";
 
 const { shallow } = Enzyme;
 
@@ -32,4 +33,13 @@ it("1st pane should render Sidebar", () => {
     .at(0)
     .find(".sidebar-pane");
   expect(firstPane.find(Sidebar).length).toEqual(1);
+});
+
+it("2nd pane should render List", () => {
+  const wrapper = shallow(<App />);
+  const secondPane = wrapper
+    .find(SplitPane)
+    .at(0)
+    .find(".list-mail-pane");
+  expect(secondPane.find(List).length).toEqual(1);
 });
