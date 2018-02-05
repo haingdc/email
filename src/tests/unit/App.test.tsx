@@ -4,7 +4,7 @@ import * as Adapter from "enzyme-adapter-react-16";
 // @ts-ignore
 import * as SplitPane from "react-split-pane";
 
-import App from "../../App";
+import App, { Sidebar } from "../../App";
 
 const { shallow } = Enzyme;
 
@@ -17,9 +17,18 @@ it("should render a split pane", () => {
 
 it("splitpane should render 3 panes", () => {
   const wrapper = shallow(<App />);
-  const splitpane = wrapper.find(SplitPane);
+  const splitpanes = wrapper.find(SplitPane);
 
-  expect(splitpane.at(0).find(".sidebar-pane").length).toEqual(1);
-  expect(splitpane.at(1).find(".list-mail-pane").length).toEqual(1);
-  expect(splitpane.at(0).find(".content-pane").length).toEqual(1);
+  expect(splitpanes.at(0).find(".sidebar-pane").length).toEqual(1);
+  expect(splitpanes.at(1).find(".list-mail-pane").length).toEqual(1);
+  expect(splitpanes.at(0).find(".content-pane").length).toEqual(1);
+});
+
+it("1st pane should render Sidebar", () => {
+  const wrapper = shallow(<App />);
+  const firstPane = wrapper
+    .find(SplitPane)
+    .at(0)
+    .find(".sidebar-pane");
+  expect(firstPane.find(Sidebar).length).toEqual(1);
 });

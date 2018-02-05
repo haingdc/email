@@ -12,7 +12,9 @@ class App extends React.Component {
       <div className="App">
         <SplitPane split="vertical" defaultSize="50%">
           <SplitPane split="vertical" defaultSize="50%">
-            <div className="sidebar-pane" />
+            <div className="sidebar-pane">
+              <Sidebar />
+            </div>
             <div className="list-mail-pane" />
           </SplitPane>
           <div className="content-pane" />
@@ -20,6 +22,10 @@ class App extends React.Component {
       </div>
     );
   }
+}
+
+export function Sidebar() {
+  return <div>this is sidebar</div>;
 }
 
 export default App;
