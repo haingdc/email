@@ -9,9 +9,11 @@ Enzyme.configure({ adapter: new Adapter() });
 const { shallow } = Enzyme;
 
 describe("header", () => {
-  it("should render an text field", () => {
+  it("should render an text field, find & X button", () => {
     const wrapper = shallow(<List />);
     const header = wrapper.find("header");
     expect(header.find("input[type='text']").length).toEqual(1);
+    expect(header.find(".find-btn").length).toEqual(1);
+    expect(header.find(".x-btn").length).toEqual(1);
   });
 });
