@@ -32,4 +32,34 @@ describe("list mail header", () => {
     const listHeader = wrapper.find(".list > header");
     expect(listHeader.find("h3").text()).toEqual("Inbox");
   });
+
+  it("header should render .dropdown", () => {
+    const wrapper = shallow(<List {...props} />);
+    const dropdown = wrapper.find(".list > header > .dropdown");
+    expect(dropdown.find("strong").text()).toEqual("All");
+    expect(
+      dropdown
+        .find("ul a")
+        .at(0)
+        .text(),
+    ).toEqual("Unread");
+    expect(
+      dropdown
+        .find("ul a")
+        .at(1)
+        .text(),
+    ).toEqual("Flagged");
+    expect(
+      dropdown
+        .find("ul a")
+        .at(2)
+        .text(),
+    ).toEqual("Sort By Date");
+    expect(
+      dropdown
+        .find("ul a")
+        .at(3)
+        .text(),
+    ).toEqual("Sort By Name");
+  });
 });

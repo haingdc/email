@@ -26,7 +26,15 @@ export default function List(props: Props) {
       <div className="list">
         <header>
           <h3>{folderItem}</h3>
-          <div className="dropdown" />
+          <div className="dropdown">
+            <strong>All</strong>
+            <ul>
+              <a href="/unread">Unread</a>
+              <a href="/flagged">Flagged</a>
+              <a href="/sortByDate">Sort By Date</a>
+              <a href="/sortByName">Sort By Name</a>
+            </ul>
+          </div>
         </header>
       </div>
     </React.Fragment>
