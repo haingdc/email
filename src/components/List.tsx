@@ -18,6 +18,9 @@ export default function List() {
           </fieldset>
         </form>
       </header>
+      <div className="list">
+        <header />
+      </div>
     </React.Fragment>
   );
 }

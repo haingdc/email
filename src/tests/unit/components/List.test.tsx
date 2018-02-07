@@ -17,3 +17,11 @@ describe("header", () => {
     expect(header.find(".x-btn").length).toEqual(1);
   });
 });
+
+describe("list mail header", () => {
+  it("should render header for mail list", () => {
+    const wrapper = shallow(<List />);
+    const listHeader = wrapper.find(".list > header");
+    expect(listHeader.length).toEqual(1);
+  });
+});
