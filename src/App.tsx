@@ -8,8 +8,17 @@ import List from "./components/List";
 
 const logo = require("./logo.svg");
 
-class App extends React.Component {
+export interface States {
+  folderItem: string;
+}
+
+class App extends React.Component<object, States> {
+  constructor(props: object) {
+    super(props);
+    this.state = { folderItem: "Inbox" };
+  }
   render() {
+    const { folderItem } = this.state;
     return (
       <div className="App">
         <SplitPane split="vertical" defaultSize="50%">
@@ -18,7 +27,7 @@ class App extends React.Component {
               <Sidebar />
             </div>
             <div className="list-mail-pane">
-              <List />
+              <List folderItem={folderItem} />
             </div>
           </SplitPane>
           <div className="content-pane" />
