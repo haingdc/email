@@ -1,6 +1,11 @@
 import * as React from "react";
 
-export default function List() {
+export interface Props {
+  folderItem: string;
+}
+
+export default function List(props: Props) {
+  const { folderItem } = props;
   return (
     <React.Fragment>
       <header>
@@ -19,7 +24,10 @@ export default function List() {
         </form>
       </header>
       <div className="list">
-        <header />
+        <header>
+          <h3>{folderItem}</h3>
+          <div className="dropdown" />
+        </header>
       </div>
     </React.Fragment>
   );
