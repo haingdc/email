@@ -1,0 +1,43 @@
+#search {
+  width: 100%;
+  position: relative;
+}
+
+#search fieldset .find-btn svg {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+}
+
+#search fieldset .find-btn svg path {
+  fill: #d5d5d5;
+}
+
+#search fieldset .x-btn svg {
+  position: absolute;
+  top: 90px;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 8px;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#search input {
+  width: 100%;
+  padding-left: 10px;
+  height: 32px;
+  line-height: 32px;
+  color: #797979;
+}
