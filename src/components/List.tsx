@@ -13,13 +13,13 @@ export default function List(props: Props) {
       <header>
         <svg className="hidden">
           <defs>
-            <symbol id="icon-search" viewBox="0 0 14 14">
+            <symbol id="icon-search" viewBox="0 0 16 16">
               <title>search</title>
-              <path d="M13.707 12.293l-2.822-2.822c.699-.981 1.115-2.177 1.115-3.471 0-3.309-2.691-6-6-6s-6 2.691-6 6 2.691 6 6 6c1.294 0 2.49-.416 3.471-1.115l2.822 2.822c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414zm-7.707-2.293c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z" />
+              <path d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z" />
             </symbol>
-            <symbol id="icon-cross" viewBox="0 0 12 12">
+            <symbol id="icon-cross" viewBox="0 0 16 16">
               <title>cross</title>
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              <path d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z" />
             </symbol>
             <symbol id="icon-spinner" viewBox="0 0 16 16">
               <title>spinner</title>
@@ -39,19 +39,21 @@ export default function List(props: Props) {
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><use xlinkHref="#icon-search"></use></svg>
             </span>
             {/* prettier-ignore */}
-            <span className="x" ><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <span className="x" >
+              <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
               <use xlinkHref="#icon-cross"></use>
-            </svg></span>
+              </svg>
+            </span>
           </fieldset>
           <button>
             {/* prettier-ignore */}
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
               <use xlinkHref="#icon-spinner"></use>
             </svg>
           </button>
           <button>
             {/* prettier-ignore */}
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" >
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" >
               <use xlinkHref="#icon-list"></use>
             </svg>
           </button>
