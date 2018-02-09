@@ -7,6 +7,7 @@ import * as SplitPane from "react-split-pane";
 import App, { States } from "../../App";
 import Sidebar from "../../components/Sidebar";
 import List from "../../components/List";
+import mockEmailList from "../../mock/email_list";
 
 const { shallow } = Enzyme;
 
@@ -47,4 +48,9 @@ it("2nd pane should render List", () => {
 it("should have `folderItem` state", () => {
   const wrapper = shallow<object, States>(<App />);
   expect(wrapper.state().folderItem).toEqual("Inbox");
+});
+
+it("should have `mailList` state", () => {
+  const wrapper = shallow<object, States>(<App />);
+  expect(wrapper.state().emailList).toEqual(mockEmailList);
 });

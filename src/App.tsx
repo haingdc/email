@@ -5,17 +5,19 @@ import "./App.css";
 import * as SplitPane from "react-split-pane";
 import Sidebar from "./components/Sidebar";
 import List from "./components/List";
+import mockEmailList, { MockEmail } from "./mock/email_list";
 
 const logo = require("./logo.svg");
 
 export interface States {
   folderItem: string;
+  emailList: MockEmail[];
 }
 
 class App extends React.Component<object, States> {
   constructor(props: object) {
     super(props);
-    this.state = { folderItem: "Inbox" };
+    this.state = { folderItem: "Inbox", emailList: mockEmailList };
   }
   render() {
     const { folderItem } = this.state;

@@ -1,5 +1,16 @@
 /* tslint:disable:max-line-length */
-const mockEmailList = [
+export interface MockEmail {
+  id: number;
+  email: {
+    email: string;
+    title: string;
+    description: string;
+    date: string;
+    time: string;
+  };
+}
+
+const mockEmailList: MockEmail[] = [
   {
     id: 1,
     email: {
