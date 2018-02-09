@@ -1,21 +1,56 @@
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+header {
+  position: relative;
+}
+
+#search button:nth-of-type(1) {
+  position: absolute;
+  right: 10px;
+}
+
 #search {
   width: 100%;
   position: relative;
 }
 
-#search fieldset .find-btn svg {
+#search fieldset {
+  position: relative;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+#search fieldset .find-btn {
   position: absolute;
-  top: 9px;
-  right: 9px;
+  top: 0px;
+  /* right: 38px; */
+  right: 10px;
+  padding: 7px;
+}
+
+#search fieldset .find-btn:hover,
+#search fieldset .x:hover,
+#search button:hover {
+  background: #797979;
 }
 
 #search fieldset .find-btn svg path {
   fill: #d5d5d5;
 }
 
-#search fieldset .x-btn svg {
+#search fieldset .x {
+  display: none;
   position: absolute;
-  top: 90px;
+  top: 0px;
+  right: 10px;
+  padding: 7px;
+  cursor: pointer;
 }
 
 input {
@@ -40,4 +75,15 @@ input:focus {
   height: 32px;
   line-height: 32px;
   color: #797979;
+}
+
+#search button {
+  position: absolute;
+  right: 50px;
+  background-color: inherit;
+  border: none;
+  display: inline-block;
+  height: 30px;
+  line-height: 34px;
+  padding: 0 7px;
 }
