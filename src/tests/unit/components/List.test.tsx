@@ -2,13 +2,14 @@ import * as React from "react";
 import * as Enzyme from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
 
-import List, { Props } from "../../../components/List";
+import List, { Props, EmailItem } from "../../../components/List";
+import mockEmailList from "../../../mock/email_list";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 const { shallow } = Enzyme;
 
-const props: Props = { folderItem: "Inbox" };
+const props: Props = { folderItem: "Inbox", emailList: mockEmailList };
 
 describe("header", () => {
   it("should render an text field, find & X button", () => {
@@ -62,4 +63,12 @@ describe("list mail header", () => {
         .text(),
     ).toEqual("Sort By Name");
   });
+});
+
+it("should have `folderItem` property", () => {
+  const wrapper = shallow<Props, object>(
+    <List folderItem="Inbox" emailList={[]} />,
+  );
+
+  expect(wrapper.instance().props).toHaveProperty("emailList");
 });
