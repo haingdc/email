@@ -4,7 +4,7 @@ import * as Adapter from "enzyme-adapter-react-16";
 // @ts-ignore
 import * as SplitPane from "react-split-pane";
 
-import App from "../../App";
+import App, { States } from "../../App";
 import Sidebar from "../../components/Sidebar";
 import List from "../../components/List";
 
@@ -42,4 +42,9 @@ it("2nd pane should render List", () => {
     .at(0)
     .find(".list-mail-pane");
   expect(secondPane.find(List).length).toEqual(1);
+});
+
+it("should have `folderItem` state", () => {
+  const wrapper = shallow<object, States>(<App />);
+  expect(wrapper.state().folderItem).toEqual("Inbox");
 });
