@@ -3,7 +3,7 @@ import * as Enzyme from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
 
 import List, { Props, EmailItem } from "../../../components/List";
-import mockEmailList from "../../../mock/email_list";
+import mockEmailList, { MockEmail } from "../../../mock/email_list";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -73,9 +73,12 @@ it("should have `folderItem` property", () => {
   expect(wrapper.instance().props).toHaveProperty("emailList");
 });
 
-it("should have 1 email item", () => {
+it("should render 1 email item", () => {
   const wrapper = shallow<Props, object>(
-    <List {...props} emailList={props[0]} />,
+    <List
+      {...props}
+      emailList={([] as MockEmail[]).concat(props.emailList[0])}
+    />,
   );
   expect(wrapper.find(EmailItem).length).toEqual(1);
 });
