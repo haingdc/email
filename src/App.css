@@ -109,3 +109,7 @@ fieldset {
 .Resizer.disabled:hover {
   border-color: transparent;
 }
+
+.list-mail-pane {
+  position: relative;
+}

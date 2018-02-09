@@ -64,24 +64,30 @@ export default class List extends React.Component<Props, object> {
           {/* tslint:enable:max-line-length */}
         </header>
         <div className="list">
-          <header>
-            <h3>{folderItem}</h3>
-            <div className="dropdown">
-              <strong>All</strong>
-              <ul>
-                <a href="/unread">Unread</a>
-                <a href="/flagged">Flagged</a>
-                <a href="/sortByDate">Sort By Date</a>
-                <a href="/sortByName">Sort By Name</a>
-              </ul>
+          <div className="main-container">
+            <header>
+              <h3>{folderItem}</h3>
+              <div className="dropdown">
+                <strong>All</strong>
+                <ul>
+                  <a href="/unread">Unread</a>
+                  <a href="/flagged">Flagged</a>
+                  <a href="/sortByDate">Sort By Date</a>
+                  <a href="/sortByName">Sort By Name</a>
+                </ul>
+              </div>
+            </header>
+            <div className="content-wrapper">
+              <div className="overflow-container">
+                <div className="overflow-content">
+                  {emailList ? (
+                    emailList.map((el, i) => <EmailItem key={i} index={i} />)
+                  ) : (
+                    <article>There is nothing.</article>
+                  )}
+                </div>
+              </div>
             </div>
-          </header>
-          <div>
-            {emailList ? (
-              emailList.map((el, i) => <EmailItem key={i} />)
-            ) : (
-              <article>There is nothing.</article>
-            )}
           </div>
         </div>
       </React.Fragment>
@@ -89,6 +95,6 @@ export default class List extends React.Component<Props, object> {
   }
 }
 
-export function EmailItem() {
-  return <article>EmailItem</article>;
+export function EmailItem({ index }: { index: number }) {
+  return <article>EmailItem {index}</article>;
 }

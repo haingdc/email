@@ -102,12 +102,44 @@ input:focus {
 }
 
 div.list {
-  flex-grow: 1;
+  /* flex: 0 0 25%; */
+  /* flex-grow: 1; */
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  display: flex;
+}
+
+div.main-container {
+  flex-direction: column;
+  display: flex;
+  height: 75vh;
+  width: 100%;
+}
+
+.content-wrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+.overflow-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.overflow-content {
+  /* height: 500px; */
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 div.list header {
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  padding: 10px;
 }
 
 .dropdown {
