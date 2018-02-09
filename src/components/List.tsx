@@ -9,7 +9,7 @@ export interface Props {
 
 export default class List extends React.Component<Props, object> {
   render() {
-    const { folderItem } = this.props;
+    const { folderItem, emailList } = this.props;
     return (
       <React.Fragment>
         {/* tslint:disable:max-line-length */}
@@ -77,7 +77,11 @@ export default class List extends React.Component<Props, object> {
             </div>
           </header>
           <div>
-            <EmailItem />
+            {emailList ? (
+              emailList.map((el, i) => <EmailItem key={i} />)
+            ) : (
+              <article>There is nothing.</article>
+            )}
           </div>
         </div>
       </React.Fragment>

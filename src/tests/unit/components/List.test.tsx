@@ -79,3 +79,10 @@ it("should have 1 email item", () => {
   );
   expect(wrapper.find(EmailItem).length).toEqual(1);
 });
+
+it("should render 2 email items", () => {
+  const wrapper = shallow<Props, object>(
+    <List {...props} emailList={props.emailList.slice(0, 2)} />,
+  );
+  expect(wrapper.find(EmailItem).length).toEqual(2);
+});
