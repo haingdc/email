@@ -72,3 +72,10 @@ it("should have `folderItem` property", () => {
 
   expect(wrapper.instance().props).toHaveProperty("emailList");
 });
+
+it("should have 1 email item", () => {
+  const wrapper = shallow<Props, object>(
+    <List {...props} emailList={props[0]} />,
+  );
+  expect(wrapper.find(EmailItem).length).toEqual(1);
+});

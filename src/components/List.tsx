@@ -76,6 +76,9 @@ export default class List extends React.Component<Props, object> {
               </ul>
             </div>
           </header>
+          <div>
+            <EmailItem />
+          </div>
         </div>
       </React.Fragment>
     );
@@ -83,5 +86,5 @@ export default class List extends React.Component<Props, object> {
 }
 
 export function EmailItem() {
-  return <div>EmailItem</div>;
+  return <article>EmailItem</article>;
 }

@@ -20,7 +20,7 @@ class App extends React.Component<object, States> {
     this.state = { folderItem: "Inbox", emailList: mockEmailList };
   }
   render() {
-    const { folderItem } = this.state;
+    const { folderItem, emailList } = this.state;
     return (
       <div className="App">
         <SplitPane split="vertical" defaultSize="50%">
@@ -29,7 +29,7 @@ class App extends React.Component<object, States> {
               <Sidebar />
             </div>
             <div className="list-mail-pane">
-              <List folderItem={folderItem} />
+              <List folderItem={folderItem} emailList={emailList} />
             </div>
           </SplitPane>
           <div className="content-pane" />
