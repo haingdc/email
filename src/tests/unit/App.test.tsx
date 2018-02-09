@@ -12,7 +12,7 @@ const { shallow } = Enzyme;
 
 Enzyme.configure({ adapter: new Adapter() });
 
-it("should render a split pane", () => {
+it("should render 2 split pane", () => {
   const wrapper = shallow(<App />);
   expect(wrapper.find(SplitPane).length).toEqual(2);
 });
