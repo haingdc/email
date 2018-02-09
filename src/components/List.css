@@ -45,6 +45,14 @@ a:hover,
   background: #f1f1f1;
 }
 
+a:active,
+#search fieldset .find-btn:active,
+#search fieldset .x:active,
+#search button:active,
+.dropdown strong:active {
+  background: #b8b6b6;
+}
+
 #search fieldset .find-btn svg path {
   fill: #d5d5d5;
 }
@@ -133,6 +141,7 @@ div.list header {
 }
 
 .dropdown ul {
+  display: none;
   position: absolute;
   border: 1px solid #e2dfdf;
   width: 100%;
