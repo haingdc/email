@@ -37,10 +37,12 @@ header {
   padding: 7px;
 }
 
+a:hover,
 #search fieldset .find-btn:hover,
 #search fieldset .x:hover,
-#search button:hover {
-  background: #797979;
+#search button:hover,
+.dropdown strong:hover {
+  background: #f1f1f1;
 }
 
 #search fieldset .find-btn svg path {
@@ -89,4 +91,54 @@ input:focus {
   height: 30px;
   line-height: 34px;
   padding: 0 7px;
+}
+
+.dropdown {
+  position: relative;
+  width: 96px;
+}
+
+.dropdown strong {
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  line-height: 26px;
+  color: #797979;
+  cursor: pointer;
+  z-index: 2;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown strong::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 3px 0 3px;
+  border-color: #797979 transparent transparent transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  right: 9px;
+}
+
+.dropdown ul {
+  position: absolute;
+  border: 1px solid #e2dfdf;
+  width: 100%;
+  padding: 26px 0px 0px;
+  top: 0px;
+  left: 0px;
+  border-radius: 2px;
+  background: #fff;
+  text-align: left;
+}
+
+.dropdown > ul a {
+  display: block;
+  font-size: 12px;
+  line-height: 26px;
+  color: #2f2f2f;
+  text-decoration: none;
 }
