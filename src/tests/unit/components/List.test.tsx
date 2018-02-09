@@ -16,7 +16,7 @@ describe("header", () => {
     const header = wrapper.find("header");
     expect(header.find("input[type='text']").length).toEqual(1);
     expect(header.find(".find-btn").length).toEqual(1);
-    expect(header.find(".x-btn").length).toEqual(1);
+    expect(header.find(".x").length).toEqual(1);
   });
 });
 
