@@ -18,12 +18,15 @@ header {
 #search {
   width: 100%;
   position: relative;
+  text-align: left;
+  padding: 30px 10px;
 }
 
 #search fieldset {
   position: relative;
   padding: 0 10px;
   display: inline-block;
+  width: 70%;
 }
 
 #search fieldset .find-btn {
