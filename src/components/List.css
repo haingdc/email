@@ -93,6 +93,15 @@ input:focus {
   padding: 0 7px;
 }
 
+div.list {
+  flex-grow: 1;
+}
+
+div.list header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .dropdown {
   position: relative;
   width: 96px;
