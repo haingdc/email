@@ -24,7 +24,7 @@ describe("header", () => {
 describe("list mail header", () => {
   it("should render header for mail list", () => {
     const wrapper = shallow(<List {...props} />);
-    const listHeader = wrapper.find(".list > header");
+    const listHeader = wrapper.find(".list header");
     expect(listHeader.length).toEqual(1);
   });
 
