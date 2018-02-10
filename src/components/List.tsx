@@ -7,7 +7,11 @@ export interface Props {
   emailList: MockEmail[];
 }
 
-export default class List extends React.Component<Props, object> {
+export interface State {
+  find: string;
+}
+
+export default class List extends React.Component<Props, State> {
   render() {
     const { folderItem, emailList } = this.props;
     return (

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as Enzyme from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
 
-import List, { Props, EmailItem } from "../../../components/List";
+import List, { Props, EmailItem, State } from "../../../components/List";
 import mockEmailList, { MockEmail } from "../../../mock/email_list";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -88,4 +88,9 @@ it("should render 2 email items", () => {
     <List {...props} emailList={props.emailList.slice(0, 2)} />,
   );
   expect(wrapper.find(EmailItem).length).toEqual(2);
+});
+
+it("should have find state", () => {
+  const wrapper = shallow<Props, State>(<List {...props} />);
+  expect(wrapper.state().find).toEqual("");
 });
