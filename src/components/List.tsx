@@ -12,6 +12,11 @@ export interface State {
 }
 
 export default class List extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { find: "" };
+  }
+
   render() {
     const { folderItem, emailList } = this.props;
     return (
