@@ -9,12 +9,12 @@ import mockEmailList, { MockEmail } from "./mock/email_list";
 
 const logo = require("./logo.svg");
 
-export interface States {
+export interface State {
   folderItem: string;
   emailList: MockEmail[];
 }
 
-class App extends React.Component<object, States> {
+class App extends React.Component<object, State> {
   constructor(props: object) {
     super(props);
     this.state = { folderItem: "Inbox", emailList: mockEmailList };
