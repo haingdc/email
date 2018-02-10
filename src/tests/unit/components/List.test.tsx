@@ -30,7 +30,7 @@ describe("list mail header", () => {
 
   it("header should render h3", () => {
     const wrapper = shallow(<List {...props} />);
-    const listHeader = wrapper.find(".list > header");
+    const listHeader = wrapper.find(".list header");
     expect(listHeader.find("h3").text()).toEqual("Inbox");
   });
 
