@@ -32,11 +32,17 @@ class App extends React.Component<object, States> {
               <List folderItem={folderItem} emailList={emailList} />
             </div>
           </SplitPane>
-          <div className="content-pane" />
+          <div className="content-pane">
+            <MailDetail />
+          </div>
         </SplitPane>
       </div>
     );
   }
+}
+
+export function MailDetail() {
+  return <div>Mail Detail</div>;
 }
 
 export default App;

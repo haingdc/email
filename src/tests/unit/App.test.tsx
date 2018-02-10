@@ -4,7 +4,7 @@ import * as Adapter from "enzyme-adapter-react-16";
 // @ts-ignore
 import * as SplitPane from "react-split-pane";
 
-import App, { States } from "../../App";
+import App, { States, MailDetail } from "../../App";
 import Sidebar from "../../components/Sidebar";
 import List from "../../components/List";
 import mockEmailList from "../../mock/email_list";
@@ -43,6 +43,12 @@ it("2nd pane should render List", () => {
     .at(0)
     .find(".list-mail-pane");
   expect(secondPane.find(List).length).toEqual(1);
+});
+
+it("3rd pane should render <MailDetail />", () => {
+  const wrapper = shallow(<App />);
+  const thirdPane = wrapper.find(".content-pane");
+  expect(thirdPane.find(MailDetail).length).toEqual(1);
 });
 
 it("should have `folderItem` state", () => {
