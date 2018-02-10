@@ -15,6 +15,11 @@ export default class List extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { find: "" };
+    this.setText = this.setText.bind(this);
+  }
+
+  setText(event: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({ find: event.target.value });
   }
 
   render() {
@@ -45,7 +50,11 @@ export default class List extends React.Component<Props, State> {
           </svg>
           <form id="search">
             <fieldset>
-              <input type="text" />
+              <input
+                type="text"
+                value={this.state.find}
+                onChange={this.setText}
+              />
               <span className="find-btn">
                 {/* prettier-ignore */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><use xlinkHref="#icon-search"></use></svg>

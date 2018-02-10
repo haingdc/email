@@ -94,3 +94,10 @@ it("should have find state", () => {
   const wrapper = shallow<Props, State>(<List {...props} />);
   expect(wrapper.state().find).toEqual("");
 });
+
+it("input[text] should handle onChange", () => {
+  const wrapper = shallow<Props, State>(<List {...props} />);
+  const input = wrapper.find("#search input");
+  input.simulate("change", { target: { value: "Resin" } });
+  expect(wrapper.state().find).toEqual("Resin");
+});
