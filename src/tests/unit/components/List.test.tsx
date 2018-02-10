@@ -36,7 +36,7 @@ describe("list mail header", () => {
 
   it("header should render .dropdown", () => {
     const wrapper = shallow(<List {...props} />);
-    const dropdown = wrapper.find(".list > header > .dropdown");
+    const dropdown = wrapper.find(".list header > .dropdown");
     expect(dropdown.find("strong").text()).toEqual("All");
     expect(
       dropdown
