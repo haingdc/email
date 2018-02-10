@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as Enzyme from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
+import { spy } from "sinon";
 
 import List, { Props, EmailItem, State } from "../../../components/List";
 import mockEmailList, { MockEmail } from "../../../mock/email_list";
@@ -100,4 +101,12 @@ it("input[text] should handle onChange", () => {
   const input = wrapper.find("#search input");
   input.simulate("change", { target: { value: "Resin" } });
   expect(wrapper.state().find).toEqual("Resin");
+});
+
+it("should toggle the dropdown", () => {
+  const wrapper = Enzyme.mount<Props, State>(<List {...props} />);
+  expect(wrapper.find(".dropdown ul").hasClass("on")).toEqual(false);
+  (wrapper.instance() as List).toggleDropdown();
+  wrapper.update();
+  expect(wrapper.find(".dropdown ul").hasClass("on")).toEqual(true);
 });

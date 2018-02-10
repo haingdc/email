@@ -9,21 +9,32 @@ export interface Props {
 
 export interface State {
   find: string;
+  dropdown: "on" | "";
 }
 
 export default class List extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { find: "" };
+    this.state = { find: "", dropdown: "" };
     this.setText = this.setText.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   setText(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ find: event.target.value });
   }
 
+  toggleDropdown() {
+    if (!this.state.dropdown) {
+      this.setState({ dropdown: "on" });
+    } else {
+      this.setState({ dropdown: "" });
+    }
+  }
+
   render() {
     const { folderItem, emailList } = this.props;
+    const { dropdown } = this.state;
     return (
       <React.Fragment>
         {/* tslint:disable:max-line-length */}
@@ -85,9 +96,9 @@ export default class List extends React.Component<Props, State> {
           <div className="main-container">
             <header>
               <h3>{folderItem}</h3>
-              <div className="dropdown">
+              <div className="dropdown" onClick={this.toggleDropdown}>
                 <strong>All</strong>
-                <ul>
+                <ul className={dropdown}>
                   <a href="/unread">Unread</a>
                   <a href="/flagged">Flagged</a>
                   <a href="/sortByDate">Sort By Date</a>
