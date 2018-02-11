@@ -13,7 +13,7 @@ const props: EmailItemProps = {
   id: 1,
   name: "Medium Daily Digest",
   title: "mot cuoc thi dai dang dang",
-  datetime: new Date(),
+  datetime: new Date("7/25/2017 11:28 AM"),
 };
 
 it("should render name", () => {
@@ -34,4 +34,14 @@ it("should render title", () => {
       .at(0)
       .text(),
   ).toEqual("mot cuoc thi dai dang dang");
+});
+
+it("should render time", () => {
+  const wrapper = shallow<EmailItemProps, object>(<EmailItem {...props} />);
+  expect(
+    wrapper
+      .find("time")
+      .at(0)
+      .text(),
+  ).toEqual("Tue 11:28 AM");
 });
