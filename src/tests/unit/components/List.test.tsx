@@ -105,8 +105,14 @@ it("input[text] should handle onChange", () => {
 
 it("should toggle the dropdown", () => {
   const wrapper = Enzyme.mount<Props, State>(<List {...props} />);
+  // at beginning
   expect(wrapper.find(".dropdown ul").hasClass("on")).toEqual(false);
+  // 1st click
   (wrapper.instance() as List).toggleDropdown();
   wrapper.update();
   expect(wrapper.find(".dropdown ul").hasClass("on")).toEqual(true);
+  // 2nd click
+  (wrapper.instance() as List).toggleDropdown();
+  wrapper.update();
+  expect(wrapper.find(".dropdown ul").hasClass("on")).toEqual(false);
 });
