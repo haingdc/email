@@ -110,7 +110,15 @@ export default class List extends React.Component<Props, State> {
               <div className="overflow-container">
                 <div className="overflow-content">
                   {emailList ? (
-                    emailList.map((el, i) => <EmailItem key={i} index={i} />)
+                    emailList.map(({ id, email }, i) => (
+                      <EmailItem
+                        key={i}
+                        id={id}
+                        name={email.name}
+                        datetime={new Date(`${email.date} ${email.time}`)}
+                        title={email.title}
+                      />
+                    ))
                   ) : (
                     <article>There is nothing.</article>
                   )}
@@ -124,6 +132,17 @@ export default class List extends React.Component<Props, State> {
   }
 }
 
-export function EmailItem({ index }: { index: number }) {
-  return <article>EmailItem {index}</article>;
+export interface EmailItemProps {
+  id: number;
+  name: string;
+  title: string;
+  datetime: Date;
+}
+
+export function EmailItem({ id, name, title, datetime }: EmailItemProps) {
+  return (
+    <article>
+      <h2>{name}</h2>
+    </article>
+  );
 }
