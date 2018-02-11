@@ -25,3 +25,13 @@ it("should render name", () => {
       .text(),
   ).toEqual("Medium Daily Digest");
 });
+
+it("should render title", () => {
+  const wrapper = shallow<EmailItemProps, object>(<EmailItem {...props} />);
+  expect(
+    wrapper
+      .find("p")
+      .at(0)
+      .text(),
+  ).toEqual("mot cuoc thi dai dang dang");
+});

@@ -143,6 +143,7 @@ export function EmailItem({ id, name, title, datetime }: EmailItemProps) {
   return (
     <article>
       <h2>{name}</h2>
+      <p>{title}</p>
     </article>
   );
 }
