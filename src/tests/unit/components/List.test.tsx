@@ -10,7 +10,11 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const { shallow } = Enzyme;
 
-const props: Props = { folderItem: "Inbox", emailList: mockEmailList };
+const props: Props = {
+  folderItem: "Inbox",
+  emailList: mockEmailList,
+  handleOpenMail: (id: number) => undefined,
+};
 
 describe("header", () => {
   it("should render an text field, find & X button", () => {
@@ -67,9 +71,7 @@ describe("list mail header", () => {
 });
 
 it("should have `folderItem` property", () => {
-  const wrapper = shallow<Props, object>(
-    <List folderItem="Inbox" emailList={[]} />,
-  );
+  const wrapper = shallow<Props, object>(<List {...props} emailList={[]} />);
 
   expect(wrapper.instance().props).toHaveProperty("emailList");
 });

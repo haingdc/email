@@ -12,13 +12,28 @@ const logo = require("./logo.svg");
 export interface State {
   folderItem: string;
   emailList: MockEmail[];
+  mailDetail?: string;
+}
+
+export interface OpenMailFunc {
+  (id: number): void;
+}
+
+export interface Props {
+  openMail: OpenMailFunc;
 }
 
 class App extends React.Component<object, State> {
   constructor(props: object) {
     super(props);
     this.state = { folderItem: "Inbox", emailList: mockEmailList };
+    this.openMail = this.openMail.bind(this);
   }
+
+  openMail(id: number) {
+    this.setState({ mailDetail: "" + id });
+  }
+
   render() {
     const { folderItem, emailList } = this.state;
     return (
@@ -29,7 +44,11 @@ class App extends React.Component<object, State> {
               <Sidebar />
             </div>
             <div className="list-mail-pane">
-              <List folderItem={folderItem} emailList={emailList} />
+              <List
+                folderItem={folderItem}
+                emailList={emailList}
+                handleOpenMail={this.openMail}
+              />
             </div>
           </SplitPane>
           <div className="content-pane">

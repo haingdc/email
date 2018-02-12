@@ -3,10 +3,12 @@ import "./List.css";
 import "./EmailItem.css";
 import { MockEmail } from "../mock/email_list";
 import { format } from "date-fns";
+import { OpenMailFunc } from "../App";
 
 export interface Props {
   folderItem: string;
   emailList: MockEmail[];
+  handleOpenMail: OpenMailFunc;
 }
 
 export interface State {
@@ -35,7 +37,7 @@ export default class List extends React.Component<Props, State> {
   }
 
   render() {
-    const { folderItem, emailList } = this.props;
+    const { folderItem, emailList, handleOpenMail } = this.props;
     const { dropdown } = this.state;
     return (
       <React.Fragment>
@@ -119,6 +121,7 @@ export default class List extends React.Component<Props, State> {
                         name={email.name}
                         datetime={new Date(`${email.date} ${email.time}`)}
                         title={email.title}
+                        handleOpenMail={handleOpenMail}
                       />
                     ))
                   ) : (
@@ -139,12 +142,23 @@ export interface EmailItemProps {
   name: string;
   title: string;
   datetime: Date;
+  handleOpenMail: OpenMailFunc;
 }
 
-export function EmailItem({ id, name, title, datetime }: EmailItemProps) {
+export function EmailItem({
+  id,
+  name,
+  title,
+  datetime,
+  handleOpenMail,
+}: EmailItemProps) {
   const dateToString = format(datetime, "ddd h:mm A");
   return (
-    <article>
+    <article
+      onClick={evt => {
+        handleOpenMail(id);
+      }}
+    >
       <div>
         <h2>{name}</h2>
         <p>{title}</p>
