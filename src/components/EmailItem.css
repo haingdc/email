@@ -1,0 +1,21 @@
+.content-wrapper article {
+  display: flex;
+  border-bottom: 1px solid #2f2f2f;
+  text-align: left;
+  padding: 12px;
+}
+
+.content-wrapper article:hover {
+  background-color: azure;
+  cursor: default;
+}
+
+.content-wrapper article h2 {
+  color: #161515;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.content-wrapper articlearticle p {
+  color: rgb(124, 120, 120);
+}

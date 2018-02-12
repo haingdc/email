@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./List.css";
+import "./EmailItem.css";
 import { MockEmail } from "../mock/email_list";
 import { format } from "date-fns";
 
@@ -144,8 +145,10 @@ export function EmailItem({ id, name, title, datetime }: EmailItemProps) {
   const dateToString = format(datetime, "ddd h:mm A");
   return (
     <article>
-      <h2>{name}</h2>
-      <p>{title}</p>
+      <div>
+        <h2>{name}</h2>
+        <p>{title}</p>
+      </div>
       <time>{dateToString}</time>
     </article>
   );
