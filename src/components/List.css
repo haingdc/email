@@ -140,6 +140,7 @@ div.list header {
   justify-content: space-between;
   height: 100px;
   padding: 10px 10px 40px;
+  border-bottom: 1px solid #2f2f2f;
 }
 
 .dropdown {
