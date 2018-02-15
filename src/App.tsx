@@ -3,7 +3,7 @@ import * as Imap from "imap";
 
 import "./App.css";
 
-import SplitPane from "react-split-pane";
+import * as SplitPane from "react-split-pane";
 import Sidebar from "./components/Sidebar";
 import List from "./components/List";
 import mockEmailList, { MockEmail } from "./mock/email_list";
@@ -36,7 +36,7 @@ class App extends React.Component<object, State> {
   }
 
   render() {
-    const { folderItem, emailList } = this.state;
+    const { folderItem, emailList, mailDetail } = this.state;
     return (
       <div className="App">
         <SplitPane split="vertical" defaultSize="50%">
@@ -53,7 +53,7 @@ class App extends React.Component<object, State> {
             </div>
           </SplitPane>
           <div className="content-pane">
-            <MailDetail />
+            <MailDetail content={mailDetail} />
           </div>
         </SplitPane>
       </div>
@@ -61,8 +61,12 @@ class App extends React.Component<object, State> {
   }
 }
 
-export function MailDetail() {
-  return <div>Mail Detail</div>;
+export interface MailDetailProps {
+  content?: string;
+}
+
+export function MailDetail({ content }: MailDetailProps) {
+  return <div>{content}</div>;
 }
 
 export default App;
