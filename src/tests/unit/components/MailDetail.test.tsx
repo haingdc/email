@@ -15,3 +15,10 @@ it("should render empty string content", () => {
   const wrapper = shallow<Props, object>(<MailDetail {...props} />);
   expect(wrapper.text()).toEqual("");
 });
+
+it("should render content", () => {
+  const wrapper = shallow<Props, object>(
+    <MailDetail {...props} content="gap nhau cuoi nam" />,
+  );
+  expect(wrapper.text()).toEqual("gap nhau cuoi nam");
+});
