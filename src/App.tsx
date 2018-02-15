@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as Imap from "imap";
 
 import "./App.css";
 
