@@ -1,8 +1,9 @@
 import * as React from "react";
+import * as Imap from "imap";
 
 import "./App.css";
-// @ts-ignore
-import * as SplitPane from "react-split-pane";
+
+import SplitPane from "react-split-pane";
 import Sidebar from "./components/Sidebar";
 import List from "./components/List";
 import mockEmailList, { MockEmail } from "./mock/email_list";
