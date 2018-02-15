@@ -3,10 +3,13 @@ import * as Imap from "imap";
 
 import "./App.css";
 
-import * as SplitPane from "react-split-pane";
+import * as sp from "react-split-pane";
 import Sidebar from "./components/Sidebar";
 import List from "./components/List";
 import mockEmailList, { MockEmail } from "./mock/email_list";
+
+// tslint:disable-next-line:no-any
+export const SplitPane: any = sp;
 
 const logo = require("./logo.svg");
 
@@ -53,7 +56,7 @@ class App extends React.Component<object, State> {
             </div>
           </SplitPane>
           <div className="content-pane">
-            <MailDetail content={mailDetail} />
+            <MailDetail content={mailDetail || ""} />
           </div>
         </SplitPane>
       </div>
@@ -62,7 +65,7 @@ class App extends React.Component<object, State> {
 }
 
 export interface MailDetailProps {
-  content?: string;
+  content: string;
 }
 
 export function MailDetail({ content }: MailDetailProps) {
