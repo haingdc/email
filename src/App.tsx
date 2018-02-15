@@ -16,7 +16,7 @@ const logo = require("./logo.svg");
 export interface State {
   folderItem: string;
   emailList: MockEmail[];
-  mailDetail?: string;
+  mailDetail: string;
 }
 
 export interface OpenMailFunc {
@@ -30,12 +30,21 @@ export interface Props {
 class App extends React.Component<object, State> {
   constructor(props: object) {
     super(props);
-    this.state = { folderItem: "Inbox", emailList: mockEmailList };
+    this.state = {
+      folderItem: "Inbox",
+      emailList: mockEmailList,
+      mailDetail: "",
+    };
     this.openMail = this.openMail.bind(this);
   }
 
   openMail(id: number) {
-    this.setState({ mailDetail: "" + id });
+    const { emailList } = this.state;
+    const mailfound = emailList.find(m => m.id === id);
+
+    if (mailfound) {
+      this.setState({ mailDetail: mailfound.email.description });
+    }
   }
 
   render() {
